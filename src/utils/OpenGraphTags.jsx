@@ -4,8 +4,8 @@ const OpenGraphTags = () => {
       <meta property="og:url" content="https://cloudnineinflatables.com" />
       {/* thumbnail And title for social media */}
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="Cloud Nine Inflatables | Bouncy House Rentals" />
-      <meta property="og:description" content="Clean, safe inflatables for birthdays, schools, and community events. Call for pricing and availability." />
+      <meta property="og:title" content="Cloud 9 Inflatables | Bouncy House Rentals" />
+      <meta property="og:description" content="Spend less, rent with the best! Clean, safe inflatables for birthdays, schools, and community events. Call for pricing and availability." />
       <meta property="og:image" content="/assets/images/inflatables/balloon-bounce-house.png" />
     </React.Fragment>;
 };

@@ -1,12 +1,13 @@
 import { Button, Grid, styled } from "@mui/material";
 import BazaarImage from "components/BazaarImage";
 import { FlexBetween } from "components/flex-box";
-import { Paragraph } from "components/Typography";
 
 // styled component
 const StyledBox = styled(FlexBetween)(({
   theme
 }) => ({
+  paddingTop: theme.spacing(6),
+  paddingBottom: theme.spacing(4),
   ".title": {
     fontSize: 50,
     marginTop: 0,
@@ -14,6 +15,16 @@ const StyledBox = styled(FlexBetween)(({
     marginBottom: "1.35rem",
     color: theme.palette.text.primary,
     textShadow: "0 8px 20px rgba(2, 6, 23, 0.5)"
+  },
+  ".subtitle": {
+    maxWidth: 520,
+    fontSize: 24,
+    fontWeight: 700,
+    lineHeight: 1.35,
+    marginTop: 0,
+    marginBottom: "1.75rem",
+    color: theme.palette.grey[100],
+    textShadow: "0 10px 24px rgba(2, 6, 23, 0.45)"
   },
   [theme.breakpoints.up("sm")]: {
     ".grid-item": {
@@ -24,19 +35,25 @@ const StyledBox = styled(FlexBetween)(({
       justifyContent: "center"
     }
   },
-  [theme.breakpoints.down("sm")]: {
-    marginLeft: 0,
-    paddingLeft: 0,
-    ".title": {
-      fontSize: 32
+  [theme.breakpoints.down("md")]: {
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(3),
+    ".subtitle": {
+      fontSize: 20,
+      marginBottom: "1.25rem"
     }
   },
-  [theme.breakpoints.down("xs")]: {
+  [theme.breakpoints.down("sm")]: {
+    paddingTop: theme.spacing(3.5),
+    paddingBottom: theme.spacing(3),
     ".title": {
-      fontSize: 16
+      fontSize: 34,
+      lineHeight: 1.12,
+      marginBottom: "0.85rem"
     },
-    ".title + *": {
-      fontSize: 13
+    ".subtitle": {
+      fontSize: 18,
+      marginBottom: "1rem"
     },
     ".button-link": {
       height: 36,
@@ -62,9 +79,7 @@ const CarouselCard1 = ({
       <Grid container spacing={3} alignItems="center" justifyContent="center">
         <Grid item className="grid-item" sm={5} xs={12}>
           <h1 className="title">{title}</h1>
-          <Paragraph color="grey.200" mb={2.7}>
-            {description}
-          </Paragraph>
+          <h2 className="subtitle">{description}</h2>
 
           {buttonText && buttonLik && (
             <a href={buttonLik}>
@@ -81,7 +96,15 @@ const CarouselCard1 = ({
         <Grid item sm={5} xs={12}>
           <BazaarImage src={imgUrl} alt={title} sx={{
           mx: "auto",
-          maxHeight: 400,
+          maxHeight: {
+            xs: 320,
+            sm: 360,
+            md: 400
+          },
+          mt: {
+            xs: 1.5,
+            sm: 0
+          },
           display: "block",
           maxWidth: "100%"
         }} />

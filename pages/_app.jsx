@@ -30,11 +30,14 @@ const App = ({
   return <Fragment>
       <Head>
         <meta charSet="utf-8" />
-        <meta name="description" content="Cloud Nine Inflatables offers clean, safe bouncy house rentals for parties, schools, and events." />
+        <meta
+          name="description"
+          content="Spend less, rent with the best! Cloud 9 Inflatables offers clean, safe inflatable rentals for parties, schools, and events."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <OpenGraphTags />
-        <title>Cloud Nine Inflatables | Bouncy House Rentals</title>
+        <title>Cloud 9 Inflatables | Bouncy House Rentals</title>
       </Head>
 
       <SettingsProvider>

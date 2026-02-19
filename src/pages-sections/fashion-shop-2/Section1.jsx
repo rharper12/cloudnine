@@ -13,8 +13,14 @@ const Section1 = ({
     backdropFilter: "blur(6px)"
   }}>
       <Container sx={{
-      pt: 0,
-      pb: 3
+      pt: {
+        xs: 1,
+        sm: 0
+      },
+      pb: {
+        xs: 6,
+        sm: 3
+      }
     }}>
         <Carousel spacing="0px" totalSlides={2} infinite={true} showDots={true} autoPlay={false} visibleSlides={1} showArrow={false}>
           {carouselData.map((item, ind) => <CarouselCard1 key={ind} buttonColor="primary" title={item.title} imgUrl={item.imgUrl} buttonLik={item.buttonLik} buttonText={item.buttonText} description={item.description} />)}

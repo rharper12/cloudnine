@@ -163,7 +163,7 @@ const ProductIntro = ({
 
           <FlexBox alignItems="center" mb={2}>
             <Box>Provided by:</Box>
-            <H6 ml={1}>Cloud Nine Inflatables</H6>
+            <H6 ml={1}>Cloud 9 Inflatables</H6>
           </FlexBox>
         </Grid>
       </Grid>

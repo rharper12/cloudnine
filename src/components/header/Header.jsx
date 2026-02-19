@@ -92,7 +92,7 @@ const Header = ({
             {/* MIDDLE CONTENT - LOGO */}
             <Link href="/">
               <a>
-                <Image height={44} src="/assets/images/bazaar-black-sm.svg" alt="Cloud Nine Inflatables" />
+                <Image height={44} src="/assets/images/bazaar-black-sm.svg" alt="Cloud 9 Inflatables" />
               </a>
             </Link>
 
@@ -147,7 +147,7 @@ const Header = ({
         <FlexBox mr={2} minWidth="170px" alignItems="center">
           <Link href="/">
             <a>
-              <Image height={44} src="/assets/images/logo2.svg" alt="Cloud Nine Inflatables" />
+              <Image height={44} src="/assets/images/logo2.svg" alt="Cloud 9 Inflatables" />
             </a>
           </Link>
         </FlexBox>

@@ -1,9 +1,9 @@
 // carousel data
 export const mainCarouselData = [
   {
-    title: "Cloud Nine Inflatables",
+    title: "Cloud 9 Inflatables",
     imgUrl: "/assets/images/inflatables/balloon-bounce-house.png",
-    description: "Bouncy house rentals that bring the wow to birthdays, schools, and community events."
+    description: "Spend less, rent with the best!"
   },
   {
     title: "Slides, Combos, and Big Energy",

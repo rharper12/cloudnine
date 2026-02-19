@@ -7,7 +7,7 @@ import Head from "next/head";
 const SEO = ({
   title,
   description,
-  sitename = "Cloud Nine Inflatables"
+  sitename = "Cloud 9 Inflatables"
 }) => {
   return <Head>
       <title>{`${title} | ${sitename}`}</title>
