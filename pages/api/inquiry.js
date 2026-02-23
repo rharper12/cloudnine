@@ -12,6 +12,28 @@ const requiredEnv = name => {
   return value;
 };
 
+const getEmailjsErrorDetail = error => {
+  const status = error?.response?.status;
+  const data = error?.response?.data;
+  if (!status) return null;
+
+  let detail = "";
+  if (typeof data === "string") detail = data;
+  else if (data && typeof data === "object") {
+    if (typeof data.message === "string") detail = data.message;
+    else if (typeof data.error === "string") detail = data.error;
+    else {
+      try {
+        detail = JSON.stringify(data);
+      } catch {
+        detail = String(data);
+      }
+    }
+  }
+
+  return { status, detail };
+};
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
@@ -28,6 +50,11 @@ export default async function handler(req, res) {
       return res.status(400).json({ message: "Cart is empty." });
     }
 
+    // Basic bot mitigation: ignore submissions that fill a hidden honeypot field.
+    if (typeof inquiry?.website === "string" && inquiry.website.trim().length > 0) {
+      return res.status(200).json({ ok: true });
+    }
+
     const validated = validateInquiry(inquiry);
     if (!validated.valid) {
       return res.status(400).json({ message: "Invalid form data.", errors: validated.errors });
@@ -38,6 +65,8 @@ export default async function handler(req, res) {
     const serviceId = requiredEnv("EMAILJS_SERVICE_ID");
     const templateId = requiredEnv("EMAILJS_TEMPLATE_ID");
     const publicKey = requiredEnv("EMAILJS_PUBLIC_KEY");
+    // Never read private keys from NEXT_PUBLIC_ env vars.
+    const privateKey = process.env.EMAILJS_PRIVATE_KEY || process.env.EMAILJS_ACCESS_TOKEN;
 
     const payload = {
       service_id: serviceId,
@@ -57,13 +86,22 @@ export default async function handler(req, res) {
       }
     };
 
+    // EmailJS can be configured to require a private key for REST API requests.
+    if (privateKey) payload.accessToken = privateKey;
+
     await axios.post(EMAILJS_ENDPOINT, payload, {
       headers: { "Content-Type": "application/json" }
     });
 
     return res.status(200).json({ ok: true });
   } catch (error) {
+    const emailjs = getEmailjsErrorDetail(error);
+    if (emailjs) {
+      const detailSuffix = emailjs.detail ? ` (${emailjs.detail})` : "";
+      return res.status(502).json({
+        message: `EmailJS request failed with status ${emailjs.status}. Check EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, and EMAILJS_PUBLIC_KEY (and EMAILJS_PRIVATE_KEY if required).${detailSuffix}`
+      });
+    }
     return res.status(500).json({ message: error?.message || "Internal server error" });
   }
 }
-

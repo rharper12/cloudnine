@@ -23,7 +23,9 @@ const initialValues = {
   state: "",
   preferredContact: "phone",
   eventDate: "",
-  eventTime: ""
+  eventTime: "",
+  // Honeypot (hidden). Bots often fill every field.
+  website: ""
 };
 
 const textFieldSx = {
@@ -145,6 +147,17 @@ const CheckoutForm = () => {
     >
       {({ values, errors, touched, handleChange, handleBlur, handleSubmit, setFieldValue, setFieldTouched }) => (
         <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="website"
+            value={values.website}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: "absolute", left: "-10000px", top: "auto", width: 1, height: 1, overflow: "hidden" }}
+          />
           <Card1 sx={{ mb: 4 }}>
             <Typography fontWeight="800" mb={0.5} color="warning.main">
               Send Inquiry
