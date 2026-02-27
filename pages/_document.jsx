@@ -13,6 +13,9 @@ export default class Bazaar extends Document {
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
           <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+          <link rel="icon" href="/assets/images/cloud-nine-logo.svg" type="image/svg+xml" />
+          <link rel="icon" href="/assets/images/cloud-nine-logo-32.png" sizes="32x32" />
+          <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         </Head>
 
         <body>
