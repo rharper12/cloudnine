@@ -74,8 +74,7 @@ const Footer1 = () => {
           sx={{
             px: "1rem",
             pt: "1rem",
-            // keep content clear of the fixed mobile bottom nav
-            pb: { xs: "5.5rem", sm: "1rem" },
+            pb: { xs: "1rem", sm: "1rem" },
             color: "white"
           }}
         >

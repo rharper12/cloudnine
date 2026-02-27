@@ -5,7 +5,6 @@ import Topbar from "components/Topbar";
 import { Footer1 } from "components/footer";
 import Header from "components/header/Header";
 import Navbar from "components/navbar/Navbar";
-import { MobileNavigationBar } from "components/mobile-navigation";
 import SearchInputWithCategory from "components/search-box/SearchInputWithCategory";
 
 /**
@@ -52,9 +51,6 @@ const ShopLayout1 = ({
           {children}
         </main>
       </Box>
-
-      {/* SMALL DEVICE BOTTOM NAVIGATION */}
-      <MobileNavigationBar />
 
       {/* FOOTER */}
       <Footer1 />

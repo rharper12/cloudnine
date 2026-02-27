@@ -4,7 +4,6 @@ import Topbar from "components/Topbar";
 import { Footer1 } from "components/footer";
 import Header from "components/header/Header";
 import Navbar from "components/navbar/Navbar";
-import { MobileNavigationBar } from "components/mobile-navigation";
 import SearchInputWithCategory from "components/search-box/SearchInputWithCategory";
 
 /**
@@ -42,9 +41,6 @@ const SaleLayout = ({
 
       {/* FOOTER AREA */}
       <Footer1 />
-
-      {/* SMALLER DEVICE NAVIGATION */}
-      <MobileNavigationBar />
     </Fragment>;
 };
 export default SaleLayout;
