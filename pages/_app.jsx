@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Head from "next/head";
 import Router from "next/router";
 import nProgress from "nprogress";
@@ -9,6 +9,7 @@ import OpenGraphTags from "utils/OpenGraphTags";
 import { AppProvider } from "contexts/AppContext";
 import SettingsProvider from "contexts/SettingContext";
 import SnackbarProvider from "components/SnackbarProvider";
+import PartyLoader from "components/PartyLoader";
 import nextI18NextConfig from "../next-i18next.config";
 import "nprogress/nprogress.css";
 import "simplebar/dist/simplebar.min.css";
@@ -27,6 +28,21 @@ const App = ({
 }) => {
   const AnyComponent = Component;
   const getLayout = AnyComponent.getLayout ?? (page => page);
+  const [isRouteLoading, setIsRouteLoading] = useState(false);
+
+  useEffect(() => {
+    const handleStart = () => setIsRouteLoading(true);
+    const handleDone = () => setIsRouteLoading(false);
+    Router.events.on("routeChangeStart", handleStart);
+    Router.events.on("routeChangeComplete", handleDone);
+    Router.events.on("routeChangeError", handleDone);
+    return () => {
+      Router.events.off("routeChangeStart", handleStart);
+      Router.events.off("routeChangeComplete", handleDone);
+      Router.events.off("routeChangeError", handleDone);
+    };
+  }, []);
+
   return <Fragment>
       <Head>
         <meta charSet="utf-8" />
@@ -39,6 +55,8 @@ const App = ({
         <OpenGraphTags />
         <title>Cloud 9 Inflatables | Bouncy House Rentals</title>
       </Head>
+
+      <PartyLoader open={isRouteLoading} />
 
       <SettingsProvider>
         <AppProvider>

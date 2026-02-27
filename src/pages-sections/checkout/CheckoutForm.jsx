@@ -406,15 +406,15 @@ const CheckoutForm = () => {
 	                  value={values.eventTime}
 	                  error={!!touched.eventTime && !!errors.eventTime}
 	                  helperText={touched.eventTime && errors.eventTime}
-	                  SelectProps={{
-	                    displayEmpty: true,
-	                    renderValue: selected => (selected ? formatHour(selected) : "Select a time")
-	                  }}
-	                  inputProps={{ "aria-label": "Tentative Time" }}
-	                  sx={textFieldSx}
-	                >
+                  SelectProps={{
+                    displayEmpty: true,
+                    renderValue: selected => (selected ? formatHour(selected) : "Select drop-off time")
+                  }}
+                  inputProps={{ "aria-label": "Drop-off Time" }}
+                  sx={textFieldSx}
+                >
                   <MenuItem value="" disabled>
-                    Select a time
+                    Select drop-off time
                   </MenuItem>
                   {hourOptions.map(value => (
                     <MenuItem key={value} value={value}>
