@@ -2,7 +2,7 @@
 export const mainCarouselData = [
   {
     title: "Cloud 9 Inflatables",
-    imgUrl: "/assets/images/inflatables/balloon-bounce-house.png",
+    imgUrl: "/assets/images/inflatables/sports-bounce-house-1.svg",
     description: "Spend less, rent with the best!"
   },
   {
@@ -43,13 +43,13 @@ export const brandList = [];
 // products
 export const products = [
   {
-    id: "balloon-bounce-house",
-    slug: "balloon-bounce-house",
-    title: "Balloon Bounce House",
-    price: 0,
-    priceLabel: "Call for pricing",
+    id: "sports-bounce-house",
+    slug: "sports-bounce-house",
+    title: "Sports Bounce House",
+    price: 175,
+    priceLabel: "$175 / day",
     description:
-      "Our Balloon Bounce House displays beautiful craftsmanship. Showcasing a vibrant and colorful design, including a whimsical balloon pattern. The Balloon Bounce House captures the attention of young guests and adds a touch of excitement to all events.",
+      "The Titan Inflatables Sports Bounce House is a game-changer for rental operators looking to stand out from the competition. Built for durability and safety, this crowd-pleaser features reinforced seams designed to withstand high-traffic use, ensuring maximum longevity. The innovative You-Turn Safe Entry provides an added layer of protection, guiding participants safely in and out of the unit to reduce injury risks. With its vibrant sports-themed design and superior construction, this bounce house draws attention at parties, school events, and festivals, keeping kids entertained for hours. It's the perfect blend of safety, excitement, and reliability - a must-have addition to any rental fleet!",
     specs: [
       "Bounce House",
       "Dims: 17'L x 14'W x 15'H",
@@ -57,10 +57,10 @@ export const products = [
       "Blowers: 1"
     ],
     riderRequirements: [
-      "Max Rider: 6",
-      "Max Height: 72\"",
+      "Max. Rider : 6",
+      "Max. Height: 72\"",
       "Min. Height: 34\"",
-      "Max Weight: 200 lbs.",
+      "Max. Weight: 200 lbs.",
       "Min. Weight: 35 lbs.",
       "Operator's Required: 1"
     ],
@@ -72,13 +72,17 @@ export const products = [
       "Reinforced Seams on Bounce Floor",
       "Extended Anchor Points"
     ],
-    thumbnail: "/assets/images/inflatables/balloon-bounce-house.png",
+    thumbnail: "/assets/images/inflatables/sports-bounce-house-1.svg",
     images: [
-      "/assets/images/inflatables/balloon-bounce-house.png"
+      "/assets/images/inflatables/sports-bounce-house-1.svg",
+      "/assets/images/inflatables/sports-bounce-house-2.svg",
+      "/assets/images/inflatables/sports-bounce-house-3.svg",
+      "/assets/images/inflatables/sports-bounce-house-4.svg"
     ],
     categories: ["Bounce House"],
     reviews: [],
     rating: 5,
+    maxQty: 1,
     for: {
       demo: "fashion-2",
       type: "best-selling-product"
@@ -88,8 +92,8 @@ export const products = [
     id: "island-fire-double-lane-combo",
     slug: "island-fire-modular-double-lane-combo",
     title: "Island Fire Modular Double Lane Combo",
-    price: 0,
-    priceLabel: "Call for pricing",
+    price: 280,
+    priceLabel: "$280 / day",
     description:
       "Turn up the heat with the Titan Inflatables Island Fire Modular Double Lane Combo! This fiery inflatable brings the fun with its vibrant red and yellow vinyl design, accented by tropical tree-shaped pillars for that island vibe. Perfect for wet or dry use, its thrilling double-lane slide keeps the energy high as kids race to the finish. This combo is sure to spark excitement and create unforgettable memories at any event!",
     specs: [
@@ -123,47 +127,56 @@ export const products = [
     categories: ["Wet/Dry Combo"],
     reviews: [],
     rating: 5,
+    maxQty: 1,
     for: {
       demo: "fashion-2",
       type: "best-selling-product"
     }
   },
   {
-    id: "conqueror-rock-climb-slide",
-    slug: "34-foot-conqueror-rock-climb-slide-wet-dry",
-    title: "34 Foot Conqueror Rock Climb Slide Wet/Dry",
-    price: 0,
-    priceLabel: "Call for pricing",
+    id: "balloon-modular-double-lane-combo",
+    slug: "balloon-modular-double-lane-combo",
+    title: "Balloon Modular Double Lane Combo",
+    price: 280,
+    priceLabel: "$280 / day",
     description:
-      "The Titan Inflatables 34 foot Conqueror Rock Climb Slide is a wet/dry inflatables as well as a dual-lane slide that offers an exciting combination of a challenging rock climb and a thrilling descent. Designed for high-energy events, this slide provides guests of all ages with an unforgettable experience. With its durable construction and vibrant design, the Conqueror Rock Climb Slide is perfect for creating a standout attraction at any event, ensuring hours of fun and excitement for everyone!",
+      "The Titan Inflatables Balloon Modular Double Lane Combo is a vibrant and versatile inflatable perfect for any event! Designed for wet or dry use, this unit features dual slides for twice the fun and an eye-catching balloon theme that's sure to delight kids of all ages. Built for both excitement and safety, it also includes extended anchor points for secure setup, making it a fantastic choice.",
     specs: [
-      "2-Person Unit",
-      "Dry Only",
-      "Dims: 34'L x 10'W x 15'H",
-      "Weight: Approx. 490 lbs.",
+      "Combo Double Lane",
+      "Wet or Dry",
+      "Dims: 28'L x 16'W x 14'H",
+      "Weight: Approx. 421 lbs.",
       "Blowers: 1"
     ],
     riderRequirements: [
-      "Max Rider: 2",
-      "Max Height: 72\"",
-      "Min. Height: 42\"",
-      "Max Weight: 200 lbs.",
-      "Min. Weight: 40 lbs.",
-      "Operator's Required: 2"
+      "Max. Rider : 6",
+      "Max. Height: 72\"",
+      "Min. Height: 34\"",
+      "Max. Weight: 200 lbs.",
+      "Min. Weight: 35 lbs.",
+      "Operator's Required: 1"
     ],
     features: [
-      "No Jump / No Stand Platform",
-      "Seat Belt Webbing Hand Holds On Steps",
-      "Slip Resistant Step Sheet To Entry Point",
-      "Deflation Flaps"
+      "Integrated Water Delivery System",
+      "Deflation Vents",
+      "Basketball Hoop",
+      "You Turn Safe Entry",
+      "Bouncer Integrated Game System (B.I.G. System)",
+      "Reinforced Seams on Bounce Floor",
+      "Extended Anchor Points"
     ],
-    thumbnail: "/assets/images/inflatables/conqueror-rock-climb-slide.png",
+    thumbnail: "/assets/images/inflatables/balloon-modular-double-lane-combo-1.svg",
     images: [
-      "/assets/images/inflatables/conqueror-rock-climb-slide.png"
+      "/assets/images/inflatables/balloon-modular-double-lane-combo-1.svg",
+      "/assets/images/inflatables/balloon-modular-double-lane-combo-2.svg",
+      "/assets/images/inflatables/balloon-modular-double-lane-combo-3.svg",
+      "/assets/images/inflatables/balloon-modular-double-lane-combo-4.svg",
+      "/assets/images/inflatables/balloon-modular-double-lane-combo-5.svg"
     ],
-    categories: ["Slide"],
+    categories: ["Wet/Dry Combo"],
     reviews: [],
     rating: 5,
+    maxQty: 1,
     for: {
       demo: "fashion-2",
       type: "best-selling-product"

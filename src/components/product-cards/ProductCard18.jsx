@@ -89,15 +89,24 @@ const ProductCard18 = ({
   } = useAppContext();
   const [openDialog, setOpenDialog] = useState(false);
   const cartItem = state.cart.find(item => item.slug === product.slug);
+  const maxQty = Number.isFinite(product?.maxQty) && product.maxQty > 0 ? product.maxQty : null;
 
   // handle add to cart
   const handleAddToCart = product => () => {
+    if (maxQty && (cartItem?.qty || 0) >= maxQty) {
+      enqueueSnackbar("Only 1 available right now.", {
+        variant: "warning"
+      });
+      return;
+    }
+
     const payload = {
       id: product.id,
       slug: product.slug,
       name: product.title,
       price: product.price,
       imgUrl: product.thumbnail,
+      maxQty: product.maxQty,
       qty: (cartItem?.qty || 0) + 1
     };
     dispatch({
@@ -108,7 +117,7 @@ const ProductCard18 = ({
       variant: "success"
     });
   };
-  const priceLabel = product.price > 0 ? currency(product.price) : product.priceLabel || "Call for pricing";
+  const priceLabel = product.priceLabel || (product.price > 0 ? currency(product.price) : "Call for pricing");
   return <Card>
       <CardMedia>
         <Link href={`/product/${product.slug}`}>
@@ -139,6 +148,7 @@ const ProductCard18 = ({
       slug: product.slug,
       title: product.title,
       price: product.price,
+      maxQty: product.maxQty,
       imgGroup: product.images,
       priceLabel: product.priceLabel,
       description: product.description,

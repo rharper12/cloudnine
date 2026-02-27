@@ -17,6 +17,12 @@ const reducer = (state, action) => {
     case "CHANGE_CART_AMOUNT":
       let cartList = state.cart;
       let cartItem = action.payload;
+      if (Number.isFinite(cartItem?.maxQty) && cartItem.maxQty > 0 && cartItem.qty > cartItem.maxQty) {
+        cartItem = {
+          ...cartItem,
+          qty: cartItem.maxQty
+        };
+      }
       let exist = cartList.find(item => item.id === cartItem.id);
       if (cartItem.qty < 1) {
         const filteredCart = cartList.filter(item => item.id !== cartItem.id);

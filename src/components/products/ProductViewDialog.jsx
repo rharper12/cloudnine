@@ -62,8 +62,22 @@ const ProductViewDialog = props => {
     dispatch
   } = useAppContext();
   const cartItem = state.cart.find(item => item.id === product.id);
-  const priceLabel = product.price > 0 ? currency(product.price) : product.priceLabel || "Call for pricing";
+  const maxQty = Number.isFinite(product?.maxQty) && product.maxQty > 0 ? product.maxQty : null;
+  const priceLabel = product.priceLabel || (product.price > 0 ? currency(product.price) : "Call for pricing");
   const handleCartAmountChange = amount => () => {
+    if (maxQty && amount > maxQty) {
+      dispatch({
+        type: "CHANGE_CART_AMOUNT",
+        payload: {
+          ...product,
+          qty: maxQty,
+          name: product.title,
+          imgUrl: product.imgGroup[0]
+        }
+      });
+      return;
+    }
+
     dispatch({
       type: "CHANGE_CART_AMOUNT",
       payload: {
@@ -150,7 +164,7 @@ const ProductViewDialog = props => {
                     {cartItem?.qty.toString().padStart(2, "0")}
                   </H3>
 
-                  <Button size="small" color="primary" variant="outlined" aria-label="Increase quantity" sx={{
+                  <Button size="small" color="primary" variant="outlined" aria-label="Increase quantity" disabled={!!maxQty && (cartItem?.qty || 0) >= maxQty} sx={{
                 p: ".6rem",
                 height: 45
               }} onClick={handleCartAmountChange(cartItem?.qty + 1)}>
