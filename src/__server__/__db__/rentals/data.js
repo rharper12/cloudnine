@@ -84,7 +84,7 @@ export const products = [
     rating: 5,
     maxQty: 1,
     for: {
-      demo: "fashion-2",
+      demo: "rentals",
       type: "best-selling-product"
     }
   },
@@ -129,7 +129,7 @@ export const products = [
     rating: 5,
     maxQty: 1,
     for: {
-      demo: "fashion-2",
+      demo: "rentals",
       type: "best-selling-product"
     }
   },
@@ -178,7 +178,7 @@ export const products = [
     rating: 5,
     maxQty: 1,
     for: {
-      demo: "fashion-2",
+      demo: "rentals",
       type: "best-selling-product"
     }
   }

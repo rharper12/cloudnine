@@ -1,4 +1,4 @@
-import { products as inflatables } from "../fashion-2/data";
+import { products as inflatables } from "../rentals/data";
 
 const productList = [...inflatables];
 

@@ -10,7 +10,7 @@ import SearchInputWithCategory from "components/search-box/SearchInputWithCatego
 /**
  *  Used in:
  *  1. market-1, matket-2, gadget-shop,
- *     fashion-shop, fashion-shop-2, fashion-shop-3, furniture-shop, grocery3, gift-shop
+ *     rentals, furniture-shop, grocery3, gift-shop
  *  2. product details page
  *  3. order-confirmation page
  *  4. product-search page
