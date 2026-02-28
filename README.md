@@ -5,8 +5,8 @@ Next.js website for Cloud 9 Inflatables (bouncy house / inflatable rentals).
 ## Quick Start
 
 Requirements:
-- Node.js v24.13.1 (your current default via `nvm`)
-- npm
+- Node.js v24.13.1 
+- npm 
 
 Install dependencies:
 
@@ -58,10 +58,6 @@ Relevant mock endpoints used by the site:
 - Rentals: `GET /api/rentals/products`
 - Rentals: `GET /api/rentals/main-carousel`, `GET /api/rentals/services`
 - Products: `GET /api/products/slug-list`, `GET /api/products/slug`, `GET /api/products/search`
-
-If/when you add a real backend:
-- Remove `import "../src/__server__";` from `pages/_app.jsx`
-- Update the client modules in `src/utils/__api__/` to call your real API base URL
 
 ## Project Layout
 
