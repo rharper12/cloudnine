@@ -9,7 +9,7 @@ import Instagram from "components/icons/Instagram";
 const CONTACT = {
   phoneDisplay: "(931) 206-1037",
   phoneHref: "tel:+19312061037",
-  email: "Cloud9inflatables@gmail.com",
+  email: "cloud9inflatables931@gmail.com",
   instagramHandle: "Cloud9Inflatable",
   instagramUrl: "https://www.instagram.com/Cloud9Inflatable/"
 };
